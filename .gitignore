@@ -1,0 +1,26 @@
+# Java / JVM
+*.class
+*.jar
+*.war
+*.ear
+*.jmod
+
+# Build folders
+bin/
+out/
+target/
+build/
+
+# IDEs
+.vscode/
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
