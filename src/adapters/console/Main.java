@@ -2,9 +2,7 @@ package adapters.console;
 
 import java.util.List;
 import java.util.Scanner;
-import entities.Material;
-import entities.Prestamo;
-import entities.Usuario;
+
 import infrastructure.repositories.InMemoryMaterialRepository;
 import infrastructure.repositories.InMemoryPrestamoRepository;
 import infrastructure.repositories.InMemoryUsuarioRepository;
@@ -50,13 +48,13 @@ public class Main {
                     System.out.print("Días de préstamo: ");
                     int dias = leerEntero(sc);
                     OperationResult resultado = biblioteca.prestar(idU, idM, dias);
-                    System.out.println(resultado.getMessage());
+                    System.out.println(resultado.getResultMessage());
                 }
                 case 4 -> {
                     System.out.print("ID Préstamo: ");
                     String idP = sc.nextLine();
                     OperationResult resultado = biblioteca.devolver(idP);
-                    System.out.println(resultado.getMessage());
+                    System.out.println(resultado.getResultMessage());
                 }
                 case 5 -> imprimirLista("Préstamos", biblioteca.listarPrestamos());
                 case 0 -> System.out.println("Saliendo...");

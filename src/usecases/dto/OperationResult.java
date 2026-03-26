@@ -1,12 +1,12 @@
 package usecases.dto;
 
 public class OperationResult {
-    private final boolean success;
-    private final String message;
+    private final boolean resultStatus;
+    private final String resultMessage;
 
-    private OperationResult(boolean success, String message) {
-        this.success = success;
-        this.message = message;
+    private OperationResult(boolean result, String message) {
+        this.resultStatus = result;
+        this.resultMessage = message;
     }
 
     public static OperationResult ok(String message) {
@@ -17,9 +17,9 @@ public class OperationResult {
         return new OperationResult(false, message);
     }
 
-    public boolean isSuccess() { return success; }
-    public String getMessage() { return message; }
+    public boolean wasSuccess() { return resultStatus; }
+    public String getResultMessage() { return resultMessage; }
 
     @Override
-    public String toString() { return message; }
+    public String toString() { return resultMessage; }
 }
